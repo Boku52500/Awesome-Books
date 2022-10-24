@@ -1,55 +1,81 @@
-const bookOne = {
-  title: 'title',
-  author: 'author',
-}
+const inputTitle = document.querySelector('#title');
+const inputAuthor = document.querySelector('#author');
+const addBtn = document.querySelector('.add-but');
+const booksSection = document.querySelector('.booksSection');
 
-const booksArr = [bookOne];
+let books = [];
 
-const addButton = document.getElementById('add');
-
-addButton.addEventListener('click', () => {
-  var boxTitle1 = document.getElementById("title").value;
-  var boxAuthor1 = document.getElementById("author").value;
-  var newObject = Object.create(bookOne);
-  newObject.title = boxTitle1;
-  newObject.author = boxAuthor1;
-  booksArr.push(newObject);
-
-  function bookCreate() {
+const renderBooks = () => {
+  booksSection.innerHTML = '';
+  books.forEach((book) => {
     const newBook = document.createElement('div');
-    newBook.classList = 'newBook';
-    document.getElementById('newBooks').appendChild(newBook);
+    newBook.classList.add('book');
+    newBook.innerHTML = `
+      <h3>${book.title}</h3>
+      <p>${book.author}</p>
+      <button class="remove-but">Remove</button>
+      <hr>
+    `;
+    booksSection.appendChild(newBook);
+    localStorage.setItem('books', JSON.stringify(books));
+  });
+};
 
-    const newTitle = document.createElement('h2');
-    newTitle.className = 'newTitle';
-    const textBox1 = document.createTextNode(newObject.title);
-    newTitle.appendChild(textBox1);
-    newBook.append(newTitle);
-
-    const newAuthor = document.createElement('h3');
-    newAuthor.className = 'newAuthor';
-    const textBox2 = document.createTextNode(newObject.author);
-    newAuthor.appendChild(textBox2);
-    newBook.append(newAuthor);
-
-    var removeBut = document.createElement('button');
-    removeBut.classList = 'removeBut';
-    const butText = document.createTextNode('Remove');
-    removeBut.append(butText);
-    newBook.append(removeBut);
-
-    const hr = document.createElement('hr');
-    hr.classList = 'hr';
-    newBook.append(hr);
-
-    removeBut.removeEventListener('click', bookCreate, false)
-
-    removeBut.addEventListener('click', () => { 
-    });
+window.addEventListener('DOMContentLoaded', () => {
+  const storageBooks = JSON.parse(localStorage.getItem('books'));
+  if (storageBooks) {
+    books = storageBooks;
+    renderBooks();
   }
-  bookCreate();
-  removeBut.removeEventListener('click', bookCreate, false)
 });
 
+const validateForm = () => {
+  if (inputTitle.value === '' || inputAuthor.value === '') {
+    const alertDiv = document.createElement('div');
+    alertDiv.classList.add('alert');
+    alertDiv.innerHTML = 'Please fill in all fields';
+    document.body.appendChild(alertDiv);
+    setTimeout(() => {
+      alertDiv.remove();
+    }, 1000);
+    return false;
+  }
+  return true;
+};
 
+const addBook = (e) => {
+  e.preventDefault();
+  if (validateForm()) {
+    const title = inputTitle.value;
+    const author = inputAuthor.value;
+    const book = {
+      title,
+      author,
+    };
+    books.push(book);
+    localStorage.setItem('books', JSON.stringify(books));
+    inputAuthor.value = '';
+    inputTitle.value = '';
+  }
+};
 
+addBtn.addEventListener('click', (e) => {
+  addBook(e);
+  renderBooks();
+});
+
+const removeFromStorage = (book) => {
+  const bookTitle = book.querySelector('h3').textContent;
+  const bookAuthor = book.querySelector('p').textContent;
+  books = books.filter(
+    (book) => book.title !== bookTitle && book.author !== bookAuthor,
+  );
+  localStorage.setItem('books', JSON.stringify(books));
+};
+
+booksSection.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove-but')) {
+    e.target.parentElement.remove();
+    removeFromStorage(e.target.parentElement);
+  }
+});
