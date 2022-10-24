@@ -1,13 +1,11 @@
-const variable = {
-  title : [],
-  author : [],
+let books = [];
+const book = new Object();
+function addBook(title, author){
+  book.tittle = title;
+  book.author = author;
+  return book
 }
-
-function addBook(title, author) {
-  variable['title'] = title;
-  variable['author'] = author;
-  return variable;
+function newBook(title,author){
+  let newBook = books.push(addBook(title,author))
+  return books
 }
-
-addBook('Harry Potter', 'J.K Rowling');
-addBook('Hello', 'helloo');
