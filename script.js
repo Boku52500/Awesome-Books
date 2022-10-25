@@ -13,9 +13,10 @@ class Second {
   }
 
   add(data) {
-    // eslint-disable-next-line no-alert
-    if (data.title === '' || data.author === '') { alert('Fields are empty'); }
-    else {
+    if (data.title === '' || data.author === '') {
+      // eslint-disable-next-line no-alert
+      alert('Fields are empty');
+    } else {
       const id = this.list.length + 1;
       data.id = id;
       this.list.push(data);
@@ -55,8 +56,7 @@ class Second {
       this.list.forEach((book) => {
         this.show(book);
       });
-    }
-    else {
+    } else {
       booksSection.innerHTML = 'No books added yet';
     }
   }
