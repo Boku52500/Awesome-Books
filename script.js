@@ -36,13 +36,15 @@ class Second {
       booksSection.innerHTML = '';
     }
     const bookInfo = document.createElement('div');
+    bookInfo.classList.add('allBook');
     const info = `
+    <div class="author-title">
     <p class="title">${item.title}</p>
-    <p class="author">${item.author}</p>
-    <button onclick="books.remove(${item.id})" type="button" id="book-${item.id}">Remove</button>
-
+    <p class="author">by ${item.author}</p>
+    </div>
+    <button class="remove-but" onclick="newbooks.remove(${item.id})" type="button" id="book-${item.id}">Remove</button>
   `;
-    bookInfo.innerHTML = text;
+    bookInfo.innerHTML = info;
     booksSection.appendChild(bookInfo);
   }
 

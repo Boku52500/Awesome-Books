@@ -22,7 +22,7 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 15%;
+  margin-top: 5%;
   gap: 15px;
   background: darkseagreen;
 }
@@ -42,4 +42,44 @@ h1 {
 
 .input-text {
   font-size: 20px;
+}
+
+.booksSection p {
+  font-size: 30px;
+}
+
+.booksSection .author {
+  position: fixed;
+  margin-left: 30%;
+}
+
+.booksSection hr {
+  margin-top: 30%;
+}
+
+.remove-but {
+  font-size: 15px;
+  margin-top: 20px;
+  border-radius: 0;
+  background-color: aqua;
+}
+
+.allBook {
+  display: flex;
+  width: 95%;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  margin: 10px;
+  background: lightgray;
+}
+
+.author-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 20px;
 }
