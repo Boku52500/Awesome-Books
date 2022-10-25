@@ -2,7 +2,7 @@
 
 # Awesome Books Project.
 
-> This is the javaScript project for Microverse. In this project, me and my partner built awesome books home page with plain HTML and javaScript.
+> This is the javaScript project for Microverse. In this project, me and my partner built awesome books home page with HTML, CSS and javaScript.
 
 ## Built With
 
