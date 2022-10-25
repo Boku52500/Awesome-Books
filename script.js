@@ -11,14 +11,12 @@ const renderBooks = () => {
     const newBook = document.createElement('div');
     newBook.classList.add('book');
     newBook.innerHTML = `
-      <h3>${book.title}</h3>
-      <p>${book.author}</p>
+      <p>${book.title} by ${book.author}</p>
       <button class="remove-but">Remove</button>
-      <hr>
     `;
     booksSection.appendChild(newBook);
     localStorage.setItem('books', JSON.stringify(books));
-  });
+ });
 };
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -79,3 +77,35 @@ booksSection.addEventListener('click', (e) => {
     removeFromStorage(e.target.parentElement);
   }
 });
+
+// class nameBook {
+//   constructor(name, writer){
+//     this.name = name;
+//     this.writer = writer;
+//   }
+//   theBook(name, writer){
+//     let albook = new Object();
+//     return (name + "by" + writer);
+//   }    
+// }
+// let newBooks = new nameBook(inputTitle, inputAuthor)
+// newBook.innerHTML = `
+//   <p>newBooks.thebook(inputTitle, inputAuthor)</<p
+
+// class bookText {
+//   static bookTest = [];
+//   static #booksSection = document.querySelector('bookTest');
+//   constructor(title, author){
+//     this.title = title;
+//     this.author = author;
+//   }  
+// }
+
+// add(){
+//   bookText.bookTest.push(this);
+// }
+
+// static remove(bookTextIndex){
+//   bookText.bookTest.splice(bookTextIndex,1);
+// }
+// static 

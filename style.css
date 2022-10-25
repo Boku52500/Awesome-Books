@@ -2,3 +2,28 @@
 body {
   background-color: lightblue;
 }
+.book {
+  background-color: white;
+  display: flex;
+  width: 95%;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-left:  15px;
+  padding-right: 15px;
+  margin: 10px;
+}
+.book2 {
+  background-color: white;
+  display: flex;
+  width: 95%;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-left:  15px;
+  padding-right: 15px;
+  margin: 10px;
+}
+.remove-but {
+  height: fit-content;
+}
