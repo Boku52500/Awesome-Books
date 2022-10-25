@@ -1,29 +1,45 @@
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body {
-  background-color: lightblue;
+h1 {
+  text-align: center;
+  font-size: 40px;
 }
-.book {
-  background-color: white;
+
+.booksSection {
   display: flex;
-  width: 95%;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-left:  15px;
-  padding-right: 15px;
-  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  font-size: 20px;
 }
-.book2 {
-  background-color: white;
+
+.addBookForm {
   display: flex;
-  width: 95%;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-left:  15px;
-  padding-right: 15px;
-  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15%;
+  gap: 15px;
+  background: darkseagreen;
 }
-.remove-but {
-  height: fit-content;
+
+.new-book {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.add-but {
+  margin-bottom: 20px;
+  font-size: 20px;
+  width: 10%;
+  border-radius: 0;
+  background-color: aqua;
+}
+
+.input-text {
+  font-size: 20px;
 }
