@@ -14,8 +14,8 @@ class Second {
 
   add(data) {
     if (data.title === '' || data.author === '') {
-      alert('Fields are empty');
-    }
+      // eslint-disable-next-line no-alert
+      alert('Fields are empty'); }
     else {
       const id = this.list.length + 1;
       data.id = id;
@@ -32,6 +32,7 @@ class Second {
     this.getData();
   }
 
+  // eslint-disable-next-line class-methods-use-this
   show(item) {
     if (booksSection.innerHTML === 'No books added yet') {
       booksSection.innerHTML = '';
@@ -68,6 +69,7 @@ this.addBut.addEventListener('click', (e) => {
   const book = new First();
   book.title = document.getElementById('title').value;
   book.author = document.getElementById('author').value;
+  // eslint-disable-next-line no-use-before-define
   newbooks.add(book);
 });
 
