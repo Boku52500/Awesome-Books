@@ -1,3 +1,4 @@
+// eslint-disable-next-line max-classes-per-file
 const booksSection = document.querySelector('.booksSection');
 class First {
   constructor(title, author) {
