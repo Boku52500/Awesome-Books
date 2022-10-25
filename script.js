@@ -13,9 +13,8 @@ class Second {
   }
 
   add(data) {
-    if (data.title === '' || data.author === '') {
-      // eslint-disable-next-line no-alert
-      alert('Fields are empty'); }
+    // eslint-disable-next-line no-alert
+    if (data.title === '' || data.author === '') { alert('Fields are empty'); }
     else {
       const id = this.list.length + 1;
       data.id = id;
