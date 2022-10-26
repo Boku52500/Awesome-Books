@@ -65,4 +65,5 @@ this.addBut.addEventListener('click', (e) => {
   book.title = document.getElementById('title').value;
   book.author = document.getElementById('author').value;
   newbooks.add(book);
-});
+}); 
+{}
