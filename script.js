@@ -15,7 +15,7 @@ class AwesomeBooks {
       data.id = id;
       this.list.push(data);
       localStorage.setItem('data', JSON.stringify(this.list));
-      this.show(data);
+      this.this(data);
     }
   }
 
@@ -26,7 +26,7 @@ class AwesomeBooks {
     this.getData();
   }
 
-  show(item) {
+  this(item) {
     if (booksSection.innerHTML === 'No books added yet') {
       booksSection.innerHTML = '';
     }
@@ -47,7 +47,7 @@ class AwesomeBooks {
     if (this.list.length > 0) {
       booksSection.innerHTML = '';
       this.list.forEach((book) => {
-        this.show(book);
+        this.this(book);
       });
     } else {
       booksSection.innerHTML = 'No books added yet';
