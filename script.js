@@ -15,7 +15,7 @@ class AwesomeBooks {
       data.id = id;
       this.list.push(data);
       localStorage.setItem('data', JSON.stringify(this.list));
-      this.this(data);
+      this.show(data);
     }
   }
 
@@ -26,9 +26,9 @@ class AwesomeBooks {
     this.getData();
   }
 
-  this(item) {
+  show(item) {
     if (booksSection.innerHTML === 'No books added yet') {
-      booksSection.innerHTML = '';
+      this.innerHTML = '';
     }
     const bookInfo = document.createElement('div');
     bookInfo.classList.add('allBook');
@@ -47,7 +47,7 @@ class AwesomeBooks {
     if (this.list.length > 0) {
       booksSection.innerHTML = '';
       this.list.forEach((book) => {
-        this.this(book);
+        this.show(book);
       });
     } else {
       booksSection.innerHTML = 'No books added yet';
