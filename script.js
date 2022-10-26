@@ -28,9 +28,8 @@ class AwesomeBooks {
 
   show(item) {
     if (booksSection.innerHTML === 'No books added yet') {
-      booksSection.innerHTML = '';
+      this.innerHTML = '';
     }
-    this
     const bookInfo = document.createElement('div');
     bookInfo.classList.add('allBook');
     const info = `
