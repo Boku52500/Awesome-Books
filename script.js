@@ -1,111 +1,68 @@
-const inputTitle = document.querySelector('#title');
-const inputAuthor = document.querySelector('#author');
-const addBtn = document.querySelector('.add-but');
 const booksSection = document.querySelector('.booksSection');
 
-let books = [];
-
-const renderBooks = () => {
-  booksSection.innerHTML = '';
-  books.forEach((book) => {
-    const newBook = document.createElement('div');
-    newBook.classList.add('book');
-    newBook.innerHTML = `
-      <p>${book.title} by ${book.author}</p>
-      <button class="remove-but">Remove</button>
-    `;
-    booksSection.appendChild(newBook);
-    localStorage.setItem('books', JSON.stringify(books));
- });
-};
-
-window.addEventListener('DOMContentLoaded', () => {
-  const storageBooks = JSON.parse(localStorage.getItem('books'));
-  if (storageBooks) {
-    books = storageBooks;
-    renderBooks();
+class AwesomeBooks {
+  constructor(title, author) {
+    this.title = title;
+    this.author = author;
+    this.list = JSON.parse(localStorage.getItem('data')) || [];
   }
-});
 
-const validateForm = () => {
-  if (inputTitle.value === '' || inputAuthor.value === '') {
-    const alertDiv = document.createElement('div');
-    alertDiv.classList.add('alert');
-    alertDiv.innerHTML = 'Please fill in all fields';
-    document.body.appendChild(alertDiv);
-    setTimeout(() => {
-      alertDiv.remove();
-    }, 1000);
-    return false;
+  add(data) {
+    if (data.title === '' || data.author === '') {
+      alert('Fields are empty');
+    } else {
+      const id = this.list.length + 1;
+      data.id = id;
+      this.list.push(data);
+      localStorage.setItem('data', JSON.stringify(this.list));
+      this.show(data);
+    }
   }
-  return true;
-};
 
-const addBook = (e) => {
+  remove(r) {
+    const newData = this.list.filter((book) => book.id !== r);
+    this.list = newData;
+    localStorage.setItem('data', JSON.stringify(this.list));
+    this.getData();
+  }
+
+  show(item) {
+    if (booksSection.innerHTML === 'No books added yet') {
+      this.innerHTML = '';
+    }
+    const bookInfo = document.createElement('div');
+    bookInfo.classList.add('allBook');
+    const info = `
+    <div class="author-title">
+    <p class="title">${item.title}</p>
+    <p class="author">by ${item.author}</p>
+    </div>
+    <button class="remove-but" onclick="newbooks.remove(${item.id})" type="button" id="book-${item.id}">Remove</button>
+  `;
+    bookInfo.innerHTML = info;
+    booksSection.appendChild(bookInfo);
+  }
+
+  getData() {
+    if (this.list.length > 0) {
+      booksSection.innerHTML = '';
+      this.list.forEach((book) => {
+        this.show(book);
+      });
+    } else {
+      booksSection.innerHTML = 'No books added yet';
+    }
+  }
+}
+
+const newbooks = new AwesomeBooks();
+newbooks.getData();
+
+this.addBut = document.querySelector('#addBut');
+this.addBut.addEventListener('click', (e) => {
   e.preventDefault();
-  if (validateForm()) {
-    const title = inputTitle.value;
-    const author = inputAuthor.value;
-    const book = {
-      title,
-      author,
-    };
-    books.push(book);
-    localStorage.setItem('books', JSON.stringify(books));
-    inputAuthor.value = '';
-    inputTitle.value = '';
-  }
-};
-
-addBtn.addEventListener('click', (e) => {
-  addBook(e);
-  renderBooks();
+  const book = new AwesomeBooks();
+  book.title = document.getElementById('title').value;
+  book.author = document.getElementById('author').value;
+  newbooks.add(book);
 });
-
-const removeFromStorage = (book) => {
-  const bookTitle = book.querySelector('h3').textContent;
-  const bookAuthor = book.querySelector('p').textContent;
-  books = books.filter(
-    (book) => book.title !== bookTitle && book.author !== bookAuthor,
-  );
-  localStorage.setItem('books', JSON.stringify(books));
-};
-
-booksSection.addEventListener('click', (e) => {
-  if (e.target.classList.contains('remove-but')) {
-    e.target.parentElement.remove();
-    removeFromStorage(e.target.parentElement);
-  }
-});
-
-// class nameBook {
-//   constructor(name, writer){
-//     this.name = name;
-//     this.writer = writer;
-//   }
-//   theBook(name, writer){
-//     let albook = new Object();
-//     return (name + "by" + writer);
-//   }    
-// }
-// let newBooks = new nameBook(inputTitle, inputAuthor)
-// newBook.innerHTML = `
-//   <p>newBooks.thebook(inputTitle, inputAuthor)</<p
-
-// class bookText {
-//   static bookTest = [];
-//   static #booksSection = document.querySelector('bookTest');
-//   constructor(title, author){
-//     this.title = title;
-//     this.author = author;
-//   }  
-// }
-
-// add(){
-//   bookText.bookTest.push(this);
-// }
-
-// static remove(bookTextIndex){
-//   bookText.bookTest.splice(bookTextIndex,1);
-// }
-// static 

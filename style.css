@@ -1,29 +1,85 @@
+* {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-body {
-  background-color: lightblue;
+h1 {
+  text-align: center;
+  font-size: 40px;
 }
-.book {
-  background-color: white;
+
+.booksSection {
   display: flex;
-  width: 95%;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-left:  15px;
-  padding-right: 15px;
-  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  font-size: 20px;
 }
-.book2 {
-  background-color: white;
+
+.addBookForm {
   display: flex;
-  width: 95%;
-  flex-direction: row;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-left:  15px;
-  padding-right: 15px;
-  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5%;
+  gap: 15px;
+  background: darkseagreen;
 }
+
+.new-book {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.add-but {
+  margin-bottom: 20px;
+  font-size: 20px;
+  width: 10%;
+  border-radius: 0;
+  background-color: aqua;
+}
+
+.input-text {
+  font-size: 20px;
+}
+
+.booksSection p {
+  font-size: 30px;
+}
+
+.booksSection .author {
+  position: fixed;
+  margin-left: 30%;
+}
+
+.booksSection hr {
+  margin-top: 30%;
+}
+
 .remove-but {
-  height: fit-content;
+  font-size: 15px;
+  margin-top: 20px;
+  border-radius: 0;
+  background-color: aqua;
+}
+
+.allBook {
+  display: flex;
+  width: 95%;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  margin: 10px;
+  background: lightgray;
+}
+
+.author-title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 20px;
 }
