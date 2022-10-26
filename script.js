@@ -1,6 +1,6 @@
 const booksSection = document.querySelector('.booksSection');
 
-class awesomeBooks {
+class AwesomeBooks {
   constructor(title, author) {
     this.title = title;
     this.author = author;
@@ -55,14 +55,14 @@ class awesomeBooks {
   }
 }
 
+const newbooks = new AwesomeBooks();
+newbooks.getData();
+
 this.addBut = document.querySelector('#addBut');
 this.addBut.addEventListener('click', (e) => {
   e.preventDefault();
-  const book = new awesomeBooks();
+  const book = new AwesomeBooks();
   book.title = document.getElementById('title').value;
   book.author = document.getElementById('author').value;
   newbooks.add(book);
 });
-
-const newbooks = new awesomeBooks();
-newbooks.getData();
