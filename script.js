@@ -1,13 +1,9 @@
 const booksSection = document.querySelector('.booksSection');
-class First {
+
+class awesomeBooks {
   constructor(title, author) {
     this.title = title;
     this.author = author;
-  }
-}
-
-class Second {
-  constructor() {
     this.list = JSON.parse(localStorage.getItem('data')) || [];
   }
 
@@ -62,11 +58,11 @@ class Second {
 this.addBut = document.querySelector('#addBut');
 this.addBut.addEventListener('click', (e) => {
   e.preventDefault();
-  const book = new First();
+  const book = new awesomeBooks();
   book.title = document.getElementById('title').value;
   book.author = document.getElementById('author').value;
   newbooks.add(book);
 });
 
-const newbooks = new Second();
+const newbooks = new awesomeBooks();
 newbooks.getData();
