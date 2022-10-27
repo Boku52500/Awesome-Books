@@ -26,7 +26,10 @@ class AwesomeBooks {
     this.getData();
   }
 
-  //Please read this before rejecting project. This property does not comply with my project. When you add book, quote stays until you refresh if you use this instead of bookSection.
+  //Please read this before rejecting project. This property does not comply with my project.
+
+  //When you add book, quote stays until you refresh if you use this instead of bookSection.
+  
   // eslint-disable-next-line class-methods-use-this
   show(item) {
     if (booksSection.innerHTML === 'Books not added yet.') {
@@ -64,7 +67,6 @@ this.addBut.addEventListener('click', (e) => {
   const book = new AwesomeBooks();
   book.title = document.getElementById('title').value;
   book.author = document.getElementById('author').value;
-  
   books.add(book);
   popup.classList.remove('display');
   document.getElementById('title').value = '';

@@ -27,7 +27,7 @@ nav {
   align-items: center;
 }
 
-.nav-cont-2>a {
+.nav-cont-2 > a {
   display: flex;
   height: 75px;
   justify-content: center;
@@ -42,7 +42,7 @@ nav {
   list-style: none;
 }
 
-.nav-cont-3>li>a {
+.nav-cont-3 > li > a {
   display: flex;
   height: 75px;
   justify-content: center;
@@ -53,12 +53,12 @@ nav {
   padding: 0 26px;
 }
 
-.nav-cont-3>li>a:hover {
+.nav-cont-3 > li > a:hover {
   background-color: rgb(233, 32, 82);
   color: white;
 }
 
-.nav-cont-3>li {
+.nav-cont-3 > li {
   position: relative;
 }
 
@@ -94,7 +94,7 @@ h1 {
   max-height: 70vh;
 }
 
-.booksSection>div {
+.booksSection > div {
   padding: 15px 20px;
   color: black;
   font-size: 20px;
@@ -103,11 +103,11 @@ h1 {
   align-items: center;
 }
 
-.booksSection>div:nth-child(odd) {
+.booksSection > div:nth-child(odd) {
   background-color: white;
 }
 
-.booksSection>div>button {
+.booksSection > div > button {
   border: 0;
   outline: 0;
   border-radius: 5px;
@@ -118,11 +118,11 @@ h1 {
   transition: background-color 0.5s;
 }
 
-.booksSection>div>button:hover {
+.booksSection > div > button:hover {
   background-color: crimson;
 }
 
-.books-form>form {
+.books-form > form {
   width: 25%;
   padding: 20px;
   background-color: rgb(233, 32, 82);
@@ -131,7 +131,7 @@ h1 {
   text-align: center;
 }
 
-.books-form>form>input[type="submit"] {
+.books-form > form > input[type="submit"] {
   background-color: rgb(75, 75, 185);
   color: white;
   font-size: 16px;
@@ -140,7 +140,7 @@ h1 {
   width: 40%;
 }
 
-.books-form>form>input[type="submit"]:hover {
+.books-form > form > input[type="submit"]:hover {
   background-color: darkblue;
 }
 
@@ -181,12 +181,12 @@ h1 {
   margin-left: auto;
 }
 
-.books-form>h2 {
+.books-form > h2 {
   text-align: center;
   margin-bottom: 31px;
 }
 
-.books-form>form>input {
+.books-form > form > input {
   border: 0;
   outline: 0;
   border-radius: 2px;
