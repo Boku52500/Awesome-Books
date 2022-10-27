@@ -26,10 +26,8 @@ class AwesomeBooks {
     this.getData();
   }
 
-  //Please read this before rejecting project. This property does not comply with my project.
-
-  //When you add book, quote stays until you refresh if you use this instead of bookSection.
-  
+  // Please read this before rejecting project. This property does not comply with my project.
+  // When you add book, quote stays until you refresh if you use this instead of bookSection.
   // eslint-disable-next-line class-methods-use-this
   show(item) {
     if (booksSection.innerHTML === 'Books not added yet.') {
