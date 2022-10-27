@@ -1,23 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Awesome Books</title>
-  </head>
-  <body>
-    <section class="awesome-books">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <title>Awesome books</title>
+</head>
+
+
+<body>
+  <nav class="nav" id="nav">
+    <div class="container">
+      <div class="nav-cont">
+        <div class="nav-cont-2">
+          <a href="#">Awesome Books</a>
+        </div>
+        <ul class="nav-cont-3">
+          <li id="list"><a href="#">List</a></li>
+          <li id="addBook"><a href="#">Add new</a></li>
+          <li id="contact"><a href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <div class="time">
+    <div class="container">
+      <p id="timeDate"></p>
+    </div>
+  </div>
+
+
+
+  <main>
+    <section class="firstpage" id="firstpage">
       <h1>Awesome Books</h1>
       <div class="booksSection"></div>
-      <form class="addBookForm">
-        <div class="new-book">Add New Awesome Book</div>
-        <input class="input-text" type="text" name="title" placeholder="Title" id="title" required />
-        <input class="input-text" type="text" name="author" placeholder="Author" id="author" required />
-        <button type="submit" class="add-but" id="addBut">Add</button>
-      </form>
     </section>
-    <script src="script.js"></script>
-  </body>
+
+
+
+
+    <section class="secondpage display" id="secondpage">
+      <div class="books-form">
+        <h1>Add a new book</h1>
+        <p class="popup display">
+          Book added successfully.
+          <button type="button" id="seeMain">click here to see</button><span id="close">&times;</span>
+        </p>
+        <form action="">
+          <input type="text" name="title" id="title" placeholder="Title" />
+          <br />
+          <input type="text" name="author" id="author" placeholder="Author" />
+          <br />
+          <input type="submit" value="Add" id="addBut" />
+        </form>
+      </div>
+    </section>
+
+
+
+    <section class="thirdpage display" id="thirdpage">
+      <h1>Contact Information</h1>
+      <p>
+        Do have any questions or you just want to say "Hello" ?<br />
+        you can reach out to us!
+      </p>
+      <ul>
+        <li>Our email : bokuandmirna@gmail.com</li>
+        <li>Our phone number : +995577908080</li>
+        <li>Our address : Streetname 22, 874234 City, Georgia</li>
+      </ul>
+    </section>
+  </main>
+
+
+
+  <footer class="footer" id="footer">
+    <div class="container">
+      Copyright &copy; Awesome books
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+
 </html>
