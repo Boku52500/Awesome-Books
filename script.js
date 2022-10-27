@@ -64,6 +64,7 @@ this.addBut.addEventListener('click', (e) => {
   const book = new AwesomeBooks();
   book.title = document.getElementById('title').value;
   book.author = document.getElementById('author').value;
+  
   books.add(book);
   popup.classList.remove('display');
   document.getElementById('title').value = '';
