@@ -1,5 +1,15 @@
 {
+  "env": {
+      "node": true,
+      "mocha": true
+  },
   "parserOptions": {
+      "ecmaVersion": 8,
       "sourceType": "module"
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+      "semi": ["error", "always"],
+      "quotes": ["error", "single"]
   }
 }
