@@ -1,7 +1,6 @@
-import AwesomeBooks from "../modules/BooksClass.js";
+import AwesomeBooks from '../modules/BooksClass.js';
 
-import { DateTime } from "../modules/luxon.js";
-
+import { DateTime } from '../modules/luxon.js';
 
 const books = new AwesomeBooks();
 
@@ -53,7 +52,7 @@ seeMain.addEventListener('click', () => {
 const date = DateTime.now();
 const dateNow = date.toLocaleString(DateTime.DATETIME_MED_WITH_SECONDS);
 document.getElementById('timeDate').innerHTML = dateNow;
-document.addEventListener('DOMContentLoaded', Actions.display);
+document.addEventListener('DOMContentLoaded');
 close.addEventListener('click', () => {
   popup.classList.add('display');
 });
