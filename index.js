@@ -1,6 +1,6 @@
-import AwesomeBooks from '/modules/BooksClass.js';
+import AwesomeBooks from './modules/BooksClass.js';
 
-import { DateTime } from '/modules/luxon.js';
+import { DateTime } from './modules/luxon.js';
 
 const books = new AwesomeBooks();
 
