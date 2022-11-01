@@ -1,6 +1,5 @@
 const booksSection = document.querySelector('.booksSection');
 
-
 export default class Books {
   constructor() {
     this.list = JSON.parse(localStorage.getItem('data')) || [];
@@ -20,7 +19,7 @@ export default class Books {
         const { id } = e.target;
         const index = id.substring(id.indexOf('-') + 1, id.length);
         this.remove(parseInt(index, 10));
-      })
+      });
     }
   }
 
@@ -46,7 +45,6 @@ export default class Books {
          `;
     bookInfo.innerHTML = info;
     booksSection.appendChild(bookInfo);
-    const books = new Books();
   }
 
   getData() {
@@ -61,12 +59,10 @@ export default class Books {
           const { id } = e.target;
           const index = id.substring(id.indexOf('-') + 1, id.length);
           this.remove(parseInt(index, 10));
-        })
-      })
+        });
+      });
     } else {
       booksSection.innerHTML = 'Books not added yet.';
     }
   }
 }
-
-

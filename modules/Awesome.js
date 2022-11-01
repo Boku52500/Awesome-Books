@@ -4,4 +4,3 @@ export default class Awesome {
     this.author = author;
   }
 }
-
