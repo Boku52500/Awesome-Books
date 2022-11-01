@@ -1,0 +1,25 @@
+{
+  "name": "awesome-books",
+  "version": "1.0.0",
+  "description": "![](https://img.shields.io/badge/Microverse-blueviolet)",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Boku52500/Awesome-Books.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Boku52500/Awesome-Books/issues"
+  },
+  "homepage": "https://github.com/Boku52500/Awesome-Books#readme",
+  "devDependencies": {
+    "eslint": "^8.26.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.26.0"
+  }
+}
