@@ -10,6 +10,10 @@
 - JavaScript
 - CSS
 
+## Live Demo
+
+You can check out the live version of my project with this [link.](https://boku52500.github.io/To-do-list/dist/index.html)
+
 ## Getting Started
 
 - Open up GitHub.
