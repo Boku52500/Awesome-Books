@@ -2,7 +2,7 @@
 
 # Awesome Books Project.
 
-> This is the javaScript project for Microverse. In this project, me and my partner built awesome books website with navigation. We used HTML, CSS and javaScript.
+> This is an Awesome Books app, where you can make a list of your favorite books. I used HTML, CSS and javaScript.
 
 ## Built With 
 
