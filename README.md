@@ -12,7 +12,7 @@
 
 ## Live Demo
 
-You can check out the live version of my project with this [link.](https://boku52500.github.io/To-do-list/dist/index.html)
+You can check out the live version of my project with this [link.](https://boku52500.github.io/Awesome-Books/)
 
 ## Getting Started
 
